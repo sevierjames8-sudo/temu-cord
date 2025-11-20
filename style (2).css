@@ -1,0 +1,45 @@
+
+body {
+    font-family: Arial;
+    background: #f3f3f3;
+    margin: 0;
+}
+
+#channels {
+    background: #222;
+    padding: 10px;
+}
+
+#channels button {
+    background: #444;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+#channels button:hover {
+    background: #555;
+}
+
+#chat {
+    height: 70vh;
+    padding: 10px;
+    overflow-y: scroll;
+    background: white;
+    border-bottom: 1px solid #ccc;
+}
+
+#input-area {
+    display: flex;
+    padding: 10px;
+    background: #ddd;
+}
+
+#input-area input {
+    flex: 1;
+    padding: 10px;
+    margin-right: 5px;
+    border: none;
+}
