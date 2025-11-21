@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Temu-Cord</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="app.js" defer></script>
+</head>
+<body>
+  <!-- AUTH -->
+  <div id="auth-screen" class="center">
+    <div class="auth-card">
+      <h1>Temu-Cord</h1>
+      <div id="forms">
+        <div id="login-form">
+          <input id="login-username" placeholder="Username" autocomplete="username" />
+          <input id="login-password" type="password" placeholder="Password" autocomplete="current-password" />
+          <button id="login-btn" class="btn">Log In</button>
+          <p class="alt">No account? <a id="show-signup" href="#">Create one</a></p>
+          <p id="login-error" class="error"></p>
+        </div>
+
+        <div id="signup-form" class="hidden">
+          <input id="signup-username" placeholder="Choose a username" autocomplete="username" />
+          <input id="signup-password" type="password" placeholder="Choose a password" autocomplete="new-password" />
+          <input id="signup-pfp" placeholder="Profile image URL (optional)" />
+          <button id="signup-btn" class="btn">Create Account</button>
+          <p class="alt">Already have an account? <a id="show-login" href="#">Log in</a></p>
+          <p id="signup-error" class="error"></p>
+        </div>
+      </div>
+    </div>
+    <p class="small-note">Usernames are unique. Passwords are hashed client-side for basic safety.</p>
+  </div>
+
+  <!-- APP -->
+  <div id="app" class="hidden">
+    <aside id="sidebar">
+      <div class="sidebar-header"><h2>Temu-Cord</h2></div>
+
+      <div class="section">
+        <div class="section-title">Channels</div>
+        <div id="channels">
+          <div class="channel active" data-channel="general"># general</div>
+          <div class="channel" data-channel="games"># games</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Users</div>
+        <input id="user-search" placeholder="Search users..." />
+        <div id="user-list"></div>
+      </div>
+
+      <div id="me">
+        <img id="me-pfp" src="" alt="pfp" />
+        <div id="me-info">
+          <div id="me-name"></div>
+          <div class="small-note">You</div>
+        </div>
+        <button id="logout" class="danger">Logout</button>
+      </div>
+    </aside>
+
+    <main id="main">
+      <div id="messages"></div>
+      <div id="composer">
+        <input id="msg-input" placeholder="Message #general" />
+        <button id="send" class="btn">Send</button>
+        <button id="open-dm" class="btn hidden">Open DM</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- DM PAGE (fullscreen) -->
+  <div id="dm-page" class="hidden">
+    <div id="dm-header">
+      <button id="dm-back" class="btn">Back</button>
+      <div id="dm-title">DM</div>
+    </div>
+
+    <div id="dm-messages" class="dm-messages"></div>
+
+    <div id="dm-composer" class="dm-composer">
+      <input id="dm-input" placeholder="Message" />
+      <button id="dm-send" class="btn">Send</button>
+    </div>
+  </div>
+
+</body>
+</html>
